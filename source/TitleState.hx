@@ -1,6 +1,8 @@
 package;
 
+import flixel.addons.display.FlxBackdrop; 
 #if desktop
+import Discord.DiscordClient;
 import sys.thread.Thread;
 #end
 import flixel.FlxG;
@@ -11,6 +13,8 @@ import flixel.addons.display.FlxGridOverlay;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.addons.transition.TransitionData;
+import flixel.effects.FlxFlicker;
+import flixel.group.FlxGroup.FlxTypedGroup;
 import haxe.Json;
 import openfl.display.Bitmap;
 import openfl.display.BitmapData;
@@ -34,6 +38,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import lime.app.Application;
 import openfl.Assets;
 
 using StringTools;
@@ -62,8 +67,10 @@ class TitleState extends MusicBeatState
 	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
+	var checker:FlxBackdrop; 
+
 	
-	var titleTextColors:Array<FlxColor> = [0xFF33FFFF, 0xFF3333CC];
+	var titleTextColors:Array<FlxColor> = [0xFFFFFFFF, 0xFF33FFFF];
 	var titleTextAlphas:Array<Float> = [1, .64];
 
 	var curWacky:Array<String> = [];
@@ -127,7 +134,7 @@ class TitleState extends MusicBeatState
 		swagShader = new ColorSwap();
 		super.create();
 
-		FlxG.save.bind('funkin', CoolUtil.getSavePath());
+		FlxG.save.bind('funkin', 'ninjamuffin99');
 
 		ClientPrefs.loadPrefs();
 
@@ -206,6 +213,16 @@ class TitleState extends MusicBeatState
 			FlxTransitionableState.skipNextTransOut = true;
 			MusicBeatState.switchState(new FlashingState());
 		} else {
+			#if desktop
+			if (!DiscordClient.isInitialized)
+			{
+				DiscordClient.initialize();
+				Application.current.onExit.add (function (exitCode) {
+					DiscordClient.shutdown();
+				});
+			}
+			#end
+
 			if (initialized)
 				startIntro();
 			else
@@ -266,6 +283,11 @@ class TitleState extends MusicBeatState
 			bg.makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		}
 
+		checker = new FlxBackdrop(Paths.image('Grid_lmao'), 0.2, 0.2, true, true); 
+		checker.velocity.set(60, 55); 
+		checker.scrollFactor.set(1, 0); 
+		add(checker);
+
 		// bg.antialiasing = ClientPrefs.globalAntialiasing;
 		// bg.setGraphicSize(Std.int(bg.width * 0.6));
 		// bg.updateHitbox();
@@ -312,16 +334,18 @@ class TitleState extends MusicBeatState
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
 			//EDIT THIS ONE IF YOU'RE MAKING A SOURCE CODE MOD!!!!
-				gfDance.frames = Paths.getSparrowAtlas('gfDanceTitle');
-				gfDance.animation.addByIndices('danceLeft', 'gfDance', [30, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
-				gfDance.animation.addByIndices('danceRight', 'gfDance', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
+				gfDance.frames = Paths.getSparrowAtlas('ReMinusBFs');
+				gfDance.animation.addByIndices('minusLeft', 'minus', [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], "", 24, false);
+				gfDance.animation.addByIndices('minusRight', 'minus', [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29], "", 24, false);
 		}
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
 
 		add(gfDance);
 		gfDance.shader = swagShader.shader;
+		gfDance.setGraphicSize(Std.int(gfDance.width * 0.60));
 		add(logoBl);
 		logoBl.shader = swagShader.shader;
+		logoBl.setGraphicSize(Std.int(logoBl.width * 0.75));
 
 		titleText = new FlxSprite(titleJSON.startx, titleJSON.starty);
 		#if (desktop && MODS_ALLOWED)
@@ -601,7 +625,7 @@ class TitleState extends MusicBeatState
 			textGroup.remove(textGroup.members[0], true);
 		}
 	}
-
+	
 	private var sickBeats:Int = 0; //Basically curBeat but won't be skipped if you hold the tab or resize the screen
 	public static var closedState:Bool = false;
 	override function beatHit()
@@ -614,9 +638,9 @@ class TitleState extends MusicBeatState
 		if(gfDance != null) {
 			danceLeft = !danceLeft;
 			if (danceLeft)
-				gfDance.animation.play('danceRight');
+				gfDance.animation.play('minusRight');
 			else
-				gfDance.animation.play('danceLeft');
+				gfDance.animation.play('minusLeft');
 		}
 
 		if(!closedState) {
