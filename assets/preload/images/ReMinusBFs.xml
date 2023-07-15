@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="ReMinusBFs.png">
+	<!-- Created with Adobe Animate version 23.0.1.70 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="minus0000" x="4" y="4" width="1117" height="764" frameX="-11" frameY="-30" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0001" x="1125" y="4" width="1128" height="764" frameX="0" frameY="-30" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0002" x="2257" y="4" width="1123" height="748" frameX="0" frameY="-46" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0003" x="3384" y="4" width="1102" height="748" frameX="-21" frameY="-46" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0004" x="4490" y="4" width="1100" height="747" frameX="-21" frameY="-47" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0005" x="5594" y="4" width="1031" height="755" frameX="-90" frameY="-47" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0006" x="6629" y="4" width="1031" height="755" frameX="-90" frameY="-47" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0007" x="4" y="772" width="1031" height="752" frameX="-90" frameY="-42" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0008" x="1039" y="772" width="1031" height="752" frameX="-90" frameY="-42" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0009" x="2074" y="772" width="1031" height="758" frameX="-90" frameY="-36" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0010" x="3109" y="772" width="1031" height="758" frameX="-90" frameY="-36" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0011" x="4144" y="772" width="1031" height="758" frameX="-90" frameY="-36" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0012" x="5179" y="772" width="1031" height="758" frameX="-90" frameY="-36" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0013" x="5179" y="772" width="1031" height="758" frameX="-90" frameY="-36" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0014" x="5179" y="772" width="1031" height="758" frameX="-90" frameY="-36" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0015" x="6214" y="772" width="1117" height="784" frameX="-11" frameY="-10" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0016" x="4" y="1560" width="1128" height="784" frameX="0" frameY="-10" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0017" x="1136" y="1560" width="1123" height="793" frameX="0" frameY="-1" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0018" x="2263" y="1560" width="1102" height="793" frameX="-21" frameY="-1" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0019" x="3369" y="1560" width="1100" height="794" frameX="-21" frameY="0" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0020" x="4473" y="1560" width="1031" height="802" frameX="-90" frameY="0" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0021" x="5508" y="1560" width="1031" height="802" frameX="-90" frameY="0" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0022" x="6543" y="1560" width="1031" height="786" frameX="-90" frameY="-8" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0023" x="4" y="2366" width="1031" height="786" frameX="-90" frameY="-8" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0024" x="1039" y="2366" width="1031" height="786" frameX="-90" frameY="-8" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0025" x="2074" y="2366" width="1031" height="779" frameX="-90" frameY="-15" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0026" x="3109" y="2366" width="1031" height="779" frameX="-90" frameY="-15" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0027" x="4144" y="2366" width="1031" height="772" frameX="-90" frameY="-22" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0028" x="4144" y="2366" width="1031" height="772" frameX="-90" frameY="-22" frameWidth="1128" frameHeight="802"/>
+	<SubTexture name="minus0029" x="4144" y="2366" width="1031" height="772" frameX="-90" frameY="-22" frameWidth="1128" frameHeight="802"/>
+</TextureAtlas>
